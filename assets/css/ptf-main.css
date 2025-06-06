@@ -8364,11 +8364,11 @@ p.form-submit {
 
   border-top: 2px solid var(--ptf-color-black);
 
-  grid-template-columns: 7.5rem 18.75rem 1fr 8.75rem;
+  grid-template-columns: 7.5rem 18.75rem;
 }
 @media only screen and (max-width: 1199px) {
   .ptf-service-box {
-    grid-template-columns: 7.5rem 1fr 1fr;
+    grid-template-columns: 7.5rem  1fr;
   }
 }
 @media only screen and (max-width: 991px) {

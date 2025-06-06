@@ -6961,7 +6961,7 @@ p.form-submit {
   transition: background-color var(--ptf-transition-duration)
     var(--ptf-transition-easing);
   border-top: 2px solid var(--ptf-color-black);
-  grid-template-columns: 7.5rem 18.75rem 1fr 8.75rem;
+  grid-template-columns: 7.5rem 18.75rem 1fr ;
 }
 @media only screen and (max-width: 1199px) {
   .ptf-service-box {
