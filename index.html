@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html
+  class="no-js ptf-is--home-default ptf-is--header-style-3 ptf-is--footer-style-1 ptf-is--custom-cursor ptf-is--footer-fixed"
+  lang="en"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>OrangeTag - Home</title>
+    <meta name="description" content="Multipurpose HTML5 Template" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon.png" />
+    <!--Framework-->
+    <link
+      rel="stylesheet"
+      href="assets/css/framework/bootstrap-reboot.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/framework/bootstrap-grid.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/framework/bootstrap-utilities.min.css"
+    />
+    <!--Plugins-->
+    <link rel="stylesheet" href="assets/css/ptf-plugins.min.css" />
+    <!--Fonts-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap"
+    />
+    <link rel="stylesheet" href="assets/fonts/CerebriSans/style.css" />
+    <!--Icons-->
+    <link
+      rel="stylesheet"
+      href="assets/fonts/LineIcons-PRO/WebFonts/Pro-Light/font-css/LinIconsPro-Light.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/LineIcons-PRO/WebFonts/Pro-Regular/font-css/LineIcons.css"
+    />
+    <link rel="stylesheet" href="assets/fonts/Socicons/socicon.css" />
+    <!--Style-->
+    <link rel="stylesheet" href="assets/css/ptf-main.min.css" />
+    <!--Custom-->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Add in <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <style>
+    .customize_nav {
+      color: #f9f9f9;
+      position: relative;
+      font-size: 16px;
+      transition: color 0.3s ease;
+      padding-bottom: 10px;
+      font-weight: 500;
+    }
+
+    /* Hover text color */
+    .customize_nav:hover {
+      color: #f57528;
+    }
+
+    /* Dot default state: hidden with opacity 0 and transform */
+    .customize_nav::before {
+      content: "●";
+      color: #f57528;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Show dot on hover or active with smooth animation */
+    .customize_nav:hover::before,
+    .customize_nav.active::before {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Keep text white when active */
+    .customize_nav.active {
+      color: #f57528;
+    }
+    /* Desktop: Hide hamburger and mobile menu */
+    @media (min-width: 992px) {
+      .ptf-offcanvas-menu-icon,
+      .ptf-offcanvas-menu,
+      .ptf-site-overlay {
+        display: none !important;
+      }
+    }
+
+    /* Mobile: Show hamburger menu */
+    @media (max-width: 991px) {
+      .ptf-offcanvas-menu-icon {
+        display: block;
+        cursor: pointer;
+        color: white;
+      }
+
+      .ptf-offcanvas-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: #111;
+        z-index: 1000;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+      }
+
+      .ptf-offcanvas-menu.active {
+        right: 0;
+      }
+
+      .ptf-site-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 999;
+      }
+
+      .ptf-site-overlay.active {
+        display: block;
+      }
+      .customize_nav1 {
+        color: #f9f9f9;
+        position: relative;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        padding-bottom: 10px;
+        font-weight: 500;
+      }
+      .customize_nav1:hover {
+        color: #f57528;
+      }
+      .custom-banner {
+        width: 100%;
+        height: 660px;
+        display: block;
+      }
+    }
+    /* Hide the <br> inside .br-mobile-hide on small/mobile screens */
+    @media (max-width: 767.98px) {
+      .br-mobile-hide {
+        display: none;
+      }
+    }
+    .pad {
+      padding-right: 400px;
+    }
+    .pad1 {
+      background-image: url(assets/img/root/service-bubble.png);
+      background-repeat: no-repeat;
+      background-position: 100% calc(100% + 120px);
+    }
+    @media (max-width: 767.98px) {
+      .pad1 {
+        background-image: none !important;
+      }
+      .pad {
+        padding-right: 1rem;
+      }
+    }
+    /* -------------------------Slider------------------------- */
+    .slider-container {
+      position: relative;
+      max-width: 1600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* The slider track: the row that slides */
+    #slider-track {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      /* prevent wrapping */
+      flex-wrap: nowrap;
+    }
+
+    /* Your product cards use bootstrap col classes, so ensure no shrink */
+    .product-card {
+      flex: 0 0 auto; /* prevent shrinking */
+      padding: 0 10px; /* gutter simulation */
+    }
+
+    /* Navigation buttons */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .nav-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Hide scrollbar for the slider container if overflow */
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(33.33% - 20px); /* 3 cards per view */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 calc(50% - 20px); /* 2 cards per view */
+      }
+    }
+
+    @media (max-width: 400px) {
+      .product-card {
+        flex: 0 0 calc(100% - 20px); /* 1 card per view */
+      }
+    }
+  </style>
+  <body>
+    <!--Site Wrapper-->
+    <div class="ptf-site-wrapper animsition">
+      <!--Site Wrapper Inner-->
+      <div class="ptf-site-wrapper__inner">
+        <!--Header-->
+        <header class="ptf-header ptf-header--style-3">
+          <div
+            class="ptf-navbar ptf-navbar--main ptf-navbar--sticky"
+            style="background-color: #000000"
+          >
+            <div class="container-xxl">
+              <div class="ptf-navbar-inner">
+                <!--Logo--><a class="ptf-navbar-logo" href="index.html"
+                  ><img
+                    class="black"
+                    src="assets/img/logo/1.png"
+                    alt=""
+                    loading="lazy"
+                    width="150"
+                    height="50"
+                    style="padding-top: 18px; padding-left: 20px" /><img
+                    class="white"
+                    src="assets/img/logo/1.png"
+                    alt=""
+                    loading="lazy"
+                /></a>
+                <!--Navigation-->
+                <nav class="ptf-nav ptf-nav--default">
+                  <!--Menu-->
+                  <ul class="sf-menu">
+                    <li class="menu-item">
+                      <a href="index.html"
+                        ><span class="customize_nav active">Home</span></a
+                      >
+                      <!-- <ul class="sub-menu">
+                        <li class="current-menu-item">
+                          <a href="index.html"><span>Home Default</span></a>
+                        </li>
+                        <li>
+                          <a href="home-studio.html"
+                            ><span>Home Studio</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-agency.html"
+                            ><span>Home Agency</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-minimal.html"
+                            ><span>Home Minimal</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-dark.html"><span>Home Dark</span></a>
+                        </li>
+                        <li>
+                          <a href="home-parallax.html"
+                            ><span>Home Parallax</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-freelancer.html"
+                            ><span>Home Freelancer</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-vertical.html"
+                            ><span>Home Vertical</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-trending.html"
+                            ><span>Home Trending</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="home-modern.html"
+                            ><span>Home Modern</span></a
+                          >
+                        </li>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item">
+                      <a href="about-us.html"
+                        ><span class="customize_nav">About us</span></a
+                      >
+                      <!-- <ul class="sub-menu">
+                        <li>
+                          <a href="portfolio-grid.html"
+                            ><span>Works Grid</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="portfolio-masonry.html"
+                            ><span>Works Masonry</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="portfolio-listing.html"
+                            ><span>Works Listing</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="portfolio-carousel.html"
+                            ><span>Works Carousel</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="portfolio-showcase-1.html"
+                            ><span>Work Showcase 1</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="portfolio-showcase-2.html"
+                            ><span>Work Showcase 2</span></a
+                          >
+                        </li>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a
+                        href="https://drive.google.com/file/d/1hTgZ_TA__5TaoWZq0baJspv7VLNr3pbu/view?usp=sharing"
+                        ><span class="customize_nav">Portfolio</span></a
+                      >
+                      <!-- <ul class="sub-menu">
+                        <li>
+                          <a href="blog-grid.html"><span>Blog Grid</span></a>
+                        </li>
+                        <li>
+                          <a href="blog-masonry.html"
+                            ><span>Blog Masonry</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="blog-sidebar.html"
+                            ><span>Blog Sidebar</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="single-post.html"
+                            ><span>Single Post</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="single-post-sidebar.html"
+                            ><span>Single Post Sidebar</span></a
+                          >
+                        </li>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item-has-children two-columns">
+                      <a href="#"
+                        ><span class="customize_nav"
+                          >Why Orange Tag Media?</span
+                        ></a
+                      >
+                      <!-- <ul class="sub-menu">
+                        <li>
+                          <a href="about-us.html"><span>About Us</span></a>
+                        </li>
+                        <li>
+                          <a href="about-me.html"><span>About Me</span></a>
+                        </li>
+                        <li>
+                          <a href="services.html"><span>Services</span></a>
+                        </li>
+                        <li>
+                          <a href="service-detail.html"
+                            ><span>Service Detail</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="pricing.html"><span>Pricing</span></a>
+                        </li>
+                        <li>
+                          <a href="team.html"><span>Team</span></a>
+                        </li>
+                        <li>
+                          <a href="faq.html"><span>FAQ</span></a>
+                        </li>
+                        <li>
+                          <a href="contact.html"><span>Contact</span></a>
+                        </li>
+                        <li>
+                          <a href="404.html"><span>Page 404</span></a>
+                        </li>
+                        <li>
+                          <a href="coming-soon.html"
+                            ><span>Coming Soon</span></a
+                          >
+                        </li>
+                      </ul> -->
+                    </li>
+                  </ul>
+                </nav>
+                <!--Buttons-->
+                <!--Navbar Search-->
+                <!-- <div class="ptf-navbar-search">
+                  <div class="ptf-navbar-search__wrapper">
+                    <form>
+                      <input
+                        type="text"
+                        placeholder="Type and hit enter to search..."
+                      />
+                    </form>
+                  </div>
+                  <a class="ptf-navbar-search__toggle" href="#"
+                    ><i class="lnir lnir-search-alt"></i
+                    ><i class="lnir lnir-close"></i
+                  ></a>
+                </div> -->
+                <!--Offcanvas Menu Toggle-->
+                <a
+                  class="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
+                  href="#"
+                  ><i class="lnir lnir-menu-alt-5"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!--Site Overlay-->
+        <div class="ptf-site-overlay"></div>
+        <!--Offcanvas Menu-->
+        <div class="ptf-offcanvas-menu">
+          <div class="ptf-offcanvas-menu__header">
+            <a class="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle" href="#"
+              ><i class="lnir lnir-close"></i
+            ></a>
+          </div>
+          <div class="ptf-offcanvas-menu__navigation">
+            <!--Navigation-->
+            <nav class="ptf-nav ptf-nav--offcanvas">
+              <!--Menu-->
+              <ul class="sf-menu">
+                <li class="menu-item-has-children two-columns">
+                  <a href="index.html"
+                    ><span class="customize_nav1">Home</span></a
+                  >
+                  <!-- <ul class="sub-menu">
+                    <li class="current-menu-item">
+                      <a href="index.html"><span>Home Default</span></a>
+                    </li>
+                    <li>
+                      <a href="home-studio.html"><span>Home Studio</span></a>
+                    </li>
+                    <li>
+                      <a href="home-agency.html"><span>Home Agency</span></a>
+                    </li>
+                    <li>
+                      <a href="home-minimal.html"><span>Home Minimal</span></a>
+                    </li>
+                    <li>
+                      <a href="home-dark.html"><span>Home Dark</span></a>
+                    </li>
+                    <li>
+                      <a href="home-parallax.html"
+                        ><span>Home Parallax</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="home-freelancer.html"
+                        ><span>Home Freelancer</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="home-vertical.html"
+                        ><span>Home Vertical</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="home-trending.html"
+                        ><span>Home Trending</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="home-modern.html"><span>Home Modern</span></a>
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="about-us.html"
+                    ><span class="customize_nav1">About us</span></a
+                  >
+                  <!-- <ul class="sub-menu">
+                    <li>
+                      <a href="portfolio-grid.html"><span>Works Grid</span></a>
+                    </li>
+                    <li>
+                      <a href="portfolio-masonry.html"
+                        ><span>Works Masonry</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="portfolio-listing.html"
+                        ><span>Works Listing</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="portfolio-carousel.html"
+                        ><span>Works Carousel</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="portfolio-showcase-1.html"
+                        ><span>Work Showcase 1</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="portfolio-showcase-2.html"
+                        ><span>Work Showcase 2</span></a
+                      >
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="menu-item-has-children">
+                  <a
+                    href="https://drive.google.com/file/d/1hTgZ_TA__5TaoWZq0baJspv7VLNr3pbu/view?usp=sharing"
+                    ><span class="customize_nav1">Portfolio</span></a
+                  >
+                  <!-- <ul class="sub-menu">
+                    <li>
+                      <a href="blog-grid.html"><span>Blog Grid</span></a>
+                    </li>
+                    <li>
+                      <a href="blog-masonry.html"><span>Blog Masonry</span></a>
+                    </li>
+                    <li>
+                      <a href="blog-sidebar.html"><span>Blog Sidebar</span></a>
+                    </li>
+                    <li>
+                      <a href="single-post.html"><span>Single Post</span></a>
+                    </li>
+                    <li>
+                      <a href="single-post-sidebar.html"
+                        ><span>Single Post Sidebar</span></a
+                      >
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="menu-item-has-children two-columns">
+                  <a href="why.html"
+                    ><span class="customize_nav1"
+                      >Why Orange Tag Media?</span
+                    ></a
+                  >
+                  <!-- <ul class="sub-menu">
+                    <li>
+                      <a href="about-us.html"><span>About Us</span></a>
+                    </li>
+                    <li>
+                      <a href="about-me.html"><span>About Me</span></a>
+                    </li>
+                    <li>
+                      <a href="services.html"><span>Services</span></a>
+                    </li>
+                    <li>
+                      <a href="service-detail.html"
+                        ><span>Service Detail</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="pricing.html"><span>Pricing</span></a>
+                    </li>
+                    <li>
+                      <a href="team.html"><span>Team</span></a>
+                    </li>
+                    <li>
+                      <a href="faq.html"><span>FAQ</span></a>
+                    </li>
+                    <li>
+                      <a href="contact.html"><span>Contact</span></a>
+                    </li>
+                    <li>
+                      <a href="404.html"><span>Page 404</span></a>
+                    </li>
+                    <li>
+                      <a href="coming-soon.html"><span>Coming Soon</span></a>
+                    </li>
+                  </ul> -->
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="ptf-offcanvas-menu__footer">
+            <p class="ptf-offcanvas-menu__copyright">
+              © 2025 <span style="color: #f57528">OrangeTag</span>. All Rights
+              Reserved.
+            </p>
+            <div class="ptf-offcanvas-menu__socials">
+              <!--Social Icon--><a
+                class="ptf-social-icon ptf-social-icon--style-3 linkedin"
+                href="https://in.linkedin.com/company/orangetag-media"
+                target="_blank"
+                ><i class="socicon-linkedin"></i
+              ></a>
+              <!--Social Icon--><a
+                class="ptf-social-icon ptf-social-icon--style-3 facebook"
+                href="https://www.facebook.com/orangetag.media"
+                target="_blank"
+                ><i class="socicon-facebook"></i
+              ></a>
+              <!--Social Icon--><a
+                class="ptf-social-icon ptf-social-icon--style-3 instagram"
+                href="https://www.instagram.com/orangetag.agency/"
+                target="_blank"
+                ><i class="socicon-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!--Main-->
+        <main class="ptf-main">
+          <article class="ptf-page ptf-page--home-default">
+            <!--  <section class="has-accent-1-background">
+            
+              <div class="ptf-spacer" style="--ptf-xxl: 15rem"></div>
+              <div class="container-xxl">
+                <div class="row">
+                  <div class="col-xl-9">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h1 class="fz-230 fz-130--lg fz-90--md">Moonex</h1>
+                    </div>
+                    <div class="ptf-spacer" style="--ptf-xxl: 0.625rem"></div>
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="100"
+                    >
+                      <p
+                        class="fz-40 fw-bold lh-1p3 text-uppercase has-white-color"
+                      >
+                        Crafting Digital <br />Agency
+                      </p>
+                    </div>
+                    <div
+                      class="ptf-spacer"
+                      style="--ptf-xxl: 8.125rem; --ptf-md: 4.0625rem"
+                    ></div>
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="200"
+                    >
+                      <p
+                        class="fz-70 fz-40--md fw-extrabold lh-1p1 has-white-color"
+                      >
+                        Good design mean that <br />good business
+                      </p>
+                    </div>
+                    
+                    <div
+                      class="ptf-spacer"
+                      style="--ptf-xxl: 9.375rem; --ptf-md: 4.6875rem"
+                    ></div>
+                    <div class="row">
+                      <div class="col-xl-8">
+                        <div style="max-width: 545px">
+                         
+                          <div
+                            class="ptf-animated-block"
+                            data-aos="fade"
+                            data-aos-delay="0"
+                          >
+                            
+                            <div class="ptf-divider"></div>
+                           
+                            <div
+                              class="ptf-spacer"
+                              style="--ptf-xxl: 4.375rem; --ptf-md: 2.1875rem"
+                            ></div>
+                            <p class="fz-24 has-white-color">
+                              We help our client suceed by creating identities,
+                              digital experiences, and printmaterials that
+                              communicate clearly, achieve marketing goals &
+                              look fantastic Lorem uispum dolor sit amert tunoer
+                              poea opefse ceefo goipully.
+                            </p>
+                          </div>
+                         
+                          <div
+                            class="ptf-spacer"
+                            style="--ptf-xxl: 6.875rem; --ptf-md: 3.4375rem"
+                          ></div>
+                         
+                          <div
+                            class="ptf-animated-block"
+                            data-aos="fade"
+                            data-aos-delay="0"
+                          >
+                            <a
+                              class="ptf-btn ptf-btn--primary ptf-btn--inversed"
+                              href="about-us.html"
+                              target="_self"
+                              >Learn More</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 d-none d-xl-block">
+                    <div class="ptf-spacer" style="--ptf-xxl: 3.75rem"></div>
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="200"
+                    >
+                      <div class="ptf-mask-image" style="max-width: 18.25rem">
+                        <img
+                          class="spin"
+                          src="assets/img/root/home-default/circle-text.png"
+                          alt=""
+                          loading="lazy"
+                        /><img
+                          src="assets/img/root/home-default/circle-logo.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 12.5rem; --ptf-md: 6.25rem"
+              ></div>
+            </section> -->
+            <section style="background-color: #ffffff !important">
+              <div class="ptf-spacer" style="--ptf-xxl: 8rem"></div>
+              <!-- Optional spacer if you want top space -->
+              <div class="container-xxl p-0" style="max-width: 100%">
+                <div class="row g-0">
+                  <!-- g-0 removes gutter between columns -->
+                  <div class="col-12">
+                    <img
+                      src="assets/img/banner/banner.jpeg"
+                      alt="Banner"
+                      loading="lazy"
+                      style="width: 100%; height: 500px; object-fit: cover"
+                      class="custom-banner"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <!--Spacer-->
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+              ></div>
+              <div class="container-xxl">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 class="h1 large-heading">
+                        Our
+                        <span class="br-mobile-hide"><br /></span>
+                        Services
+                      </h2>
+                      <!--Spacer-->
+                      <div class="ptf-spacer" style="--ptf-xxl: 2.5rem"></div>
+                      <h5 class="h5 mb-3">
+                        Welcome to OrangeTag Media Where Every Scroll Tells a
+                        Story!
+                      </h5>
+                      <p class="fz-18" style="text-align: left">
+                        At OrangeTag Media, we are not just a social media
+                        agency; we are the architects of digital narratives,
+                        crafting compelling stories that captivate and resonate.
+                        Our journey began with a simple yet powerful vision to
+                        revolutionise the social media landscape by creating
+                        scroll-stopping content that not only grabs attention
+                        but leaves a lasting impression.
+                      </p>
+                    </div>
+                    <!--Spacer-->
+                    <div
+                      class="ptf-spacer"
+                      style="--ptf-lg: 4.375rem; --ptf-md: 2.1875rem"
+                    ></div>
+                  </div>
+                  <div class="col-lg-8 offset-lg-1">
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <!--Services Box-->
+                      <div class="ptf-service-box">
+                        <div class="ptf-service-box__icon">
+                          <i class="lnil lnil-bar-chart"></i>
+                        </div>
+                        <h5 class="ptf-service-box__title">
+                          Social Media <br />
+                          Management
+                        </h5>
+                        <div class="ptf-service-box__content">
+                          <p style="text-align: justify">
+                            Harness the power of social media with our expert
+                            management services. From content creation to
+                            engagement strategies, we ensure your brand stays
+                            relevant and resonates with your target audience
+                            across various platforms.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <!--Services Box-->
+                      <div class="ptf-service-box">
+                        <div class="ptf-service-box__icon">
+                          <i class="lnil lnil-website-rank"></i>
+                        </div>
+                        <h5 class="ptf-service-box__title">
+                          Art Direction <br />&<br />
+                          Product Styling
+                        </h5>
+                        <div class="ptf-service-box__content">
+                          <p style="text-align: justify">
+                            Immerse your audience in visually stunning content
+                            with our meticulous art direction and product
+                            styling services. We transform your brand's identity
+                            into a captivating visual narrative, leaving a
+                            lasting impression on your audience.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <!--Services Box-->
+                      <div class="ptf-service-box">
+                        <div class="ptf-service-box__icon">
+                          <i
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xml:space="preserve"
+                              width="80"
+                              height="80"
+                              style="
+                                shape-rendering: geometricPrecision;
+                                text-rendering: geometricPrecision;
+                                image-rendering: optimizeQuality;
+                                fill-rule: evenodd;
+                                clip-rule: evenodd;
+                                position: relative;
+                                left: -12px; /* Move it 5px to the left */
+                              "
+                              viewBox="0 0 6.827 6.827"
+                            >
+                              <defs>
+                                <style>
+                                  .fil0 {
+                                    fill: #f57528;
+                                    fill-rule: nonzero;
+                                  }
+                                </style>
+                              </defs>
+                              <g id="Layer_x0020_1">
+                                <path
+                                  class="fil0"
+                                  d="M1.133 2.56h4.56c.081 0 .156.03.21.076.06.05.097.122.097.201V5.59c0 .08-.037.151-.096.202a.325.325 0 0 1-.21.076h-4.56a.325.325 0 0 1-.211-.076.264.264 0 0 1-.096-.202V2.837c0-.08.037-.15.096-.201a.325.325 0 0 1 .21-.076zm4.56.213h-4.56a.11.11 0 0 0-.072.025c-.013.01-.021.025-.021.04v2.751c0 .015.008.029.021.04a.11.11 0 0 0 .072.024h4.56a.11.11 0 0 0 .072-.024c.014-.011.022-.025.022-.04V2.837c0-.014-.008-.028-.022-.04a.11.11 0 0 0-.072-.024z"
+                                />
+                                <path
+                                  class="fil0"
+                                  d="m3.987 4.305-1.04.6-.16.093v-1.57l.16.093 1.04.6.16.092-.16.092zM3 4.63l.72-.416L3 3.797v.832zM3.093 2.453V1.387h.214v1.066zM3.52 2.453V1.067h.213v1.386zM3.947 2.453v-1.6h.213v1.6zM2.667 2.453v-.746h.213v.746z"
+                                />
+                              </g>
+                              <path
+                                style="fill: none"
+                                d="M0 0h6.827v6.827H0z"
+                              />
+                            </svg>
+                          </i>
+                        </div>
+                        <h5 class="ptf-service-box__title">
+                          Creating In-House <br />Reels
+                        </h5>
+                        <div class="ptf-service-box__content">
+                          <p style="text-align: justify">
+                            Stay ahead of the curve with our in-house reel
+                            creation services. We specialize in producing
+                            engaging and shareable short-form videos that
+                            capture the essence of your brand, leveraging the
+                            latest trends and features on social media
+                            platforms.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <!--Services Box-->
+                      <div class="ptf-service-box">
+                        <a
+                          class="ptf-service-box__link"
+                          href="service-detail.html"
+                        ></a>
+                        <div class="ptf-service-box__icon">
+                          <i class="lnil lnil-video-camera-alt-1"></i>
+                        </div>
+                        <h5 class="ptf-service-box__title">
+                          Influencer <br />Marketing
+                        </h5>
+                        <div class="ptf-service-box__content">
+                          <p style="text-align: justify">
+                            Amplify your brand's reach through strategic
+                            influencer partnerships. Our influencer marketing
+                            services connect you with the right personalities to
+                            authentically promote your products or services,
+                            fostering genuine connections with your target
+                            audience
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Spacer-->
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+              ></div>
+            </section>
+            <section>
+              <div class="container-xxl">
+                <div class="row align-items-center">
+                  <!-- Left Column -->
+                  <div class="col-12 col-md-6 text-center text-md-start">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 class="h1 large-heading d-inline-flex mb-3">
+                        Our Portfolio
+                      </h2>
+                    </div>
+                  </div>
+
+                  <!-- Right Column -->
+                  <div class="col-12 col-md-6 text-center">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="100"
+                    >
+                      <img
+                        src="assets/img/Qr/qr.png"
+                        alt="Scan to View Portfolio"
+                        width="220"
+                        height="220"
+                        class="img-fluid mb-2"
+                      />
+                      <p class="text-muted small">
+                        Scan the code to explore our latest work in real-time.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-12 col-md-2 text-md-end">
+                   
+                    <div class="ptf-spacer" style="--ptf-md: 1.875rem"></div>
+                    
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      
+                      <div
+                        class="ptf-slider-controls ptf-slider-controls--style-1 ptf-portfolio-slider"
+                      >
+                        <div
+                          class="ptf-swiper-button-prev ptf-swiper-button-prev--style-1"
+                        >
+                          <i class="lnil lnil-chevron-left"></i>
+                        </div>
+                        <div
+                          class="ptf-swiper-button-next ptf-swiper-button-next--style-1"
+                        >
+                          <i class="lnil lnil-chevron-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+                <!--Spacer-->
+                <!-- <div class="ptf-spacer" style="--ptf-xxl: 6.25rem"></div> -->
+                <!--Animated Block-->
+                <!-- <div
+                  class="ptf-animated-block"
+                  data-aos="fade"
+                  data-aos-delay="0"
+                >
+                  <div
+                    class="ptf-content-slider swiper-container"
+                    data-cursor=""
+                    data-navigation-anchor=".ptf-portfolio-slider"
+                    data-gap="60"
+                    data-loop="enable"
+                    data-speed=""
+                    data-autoplay=""
+                    data-autoplay-speed=""
+                    data-slides-centered=""
+                    data-slide-settings='{"slides_to_show_tablet":2,"slides_to_show":3}'
+                    data-free-mode=""
+                    data-slider-offset=""
+                    data-mousewheel=""
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-1.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">UI/UX</div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >Taskly Dashboard</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-2.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">Product</div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >Film &amp; Art Festival</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-3.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">
+                                Branding, Packaging
+                              </div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >Dark Wishky Wine</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-4.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">Illustration</div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >Swiss Style Poster</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-5.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">UI/UX</div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >Liarch Architecture Firm</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div>
+                          <article class="ptf-work ptf-work--style-3">
+                            <div class="ptf-work__media">
+                              <a
+                                class="ptf-work__link"
+                                href="portfolio-showcase-1.html"
+                              ></a>
+                              <img
+                                src="assets/img/portfolio/work-6.png"
+                                alt=""
+                                loading="lazy"
+                              />
+                            </div>
+                            <div class="ptf-work__meta">
+                              <div class="ptf-work__category">
+                                Branding, Packaging, Motion Video
+                              </div>
+                              <h4 class="ptf-work__title">
+                                <a href="portfolio-showcase-1.html"
+                                  >FG Print Brand</a
+                                >
+                              </h4>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!--Spacer-->
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+              ></div>
+            </section>
+            <section class="has-accent-1-background pad1">
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 5rem; --ptf-md: 5rem"
+              ></div>
+              <div class="container-xxl pad" style="color: black">
+                <div
+                  class="ptf-animated-block"
+                  data-aos="fade"
+                  data-aos-delay="0"
+                >
+                  <h2 class="h1 large-heading">Our Commitment</h2>
+                </div>
+
+                <div
+                  class="ptf-spacer"
+                  style="--ptf-xxl: 7.5rem; --ptf-md: 3.75rem"
+                ></div>
+
+                <div class="fz-24">
+                  <p style="text-align: justify; word-wrap: break-word">
+                    At OrangeTag Media, we don't just work for you; we work with
+                    you. Your success is our success, and we are committed to
+                    pushing the boundaries of creativity and technology to
+                    achieve your goals. Whether you're a start-up looking to
+                    make waves or an established brand seeking a fresh
+                    perspective, OrangeTag Media is your trusted partner in the
+                    ever-evolving world of social media.
+                  </p>
+                </div>
+                <!-- <div
+                  class="row"
+                  style="--bs-gutter-x: 3.75rem; --bs-gutter-y: 7.5rem"
+                >
+                  <div class="col-xl-4 col-lg-6">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <div
+                        class="ptf-approach-box"
+                        style="--ptf-title-color: var(--ptf-color-white)"
+                      >
+                        <div class="ptf-approach-box__subtitle">One</div>
+                        <h3 class="ptf-approach-box__title h1">Research</h3>
+                        <div class="ptf-approach-box__content">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit cras tempus. Libero ligula, vitae accumsan
+                            tortor varius nec. Ut luctus maximus dolor. Nunc sed
+                            diam sit amet urna fermentum accumsan vitae vitae
+                            diam.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="100"
+                    >
+                      <div
+                        class="ptf-approach-box"
+                        style="--ptf-title-color: var(--ptf-color-white)"
+                      >
+                        <div class="ptf-approach-box__subtitle">Two</div>
+                        <h3 class="ptf-approach-box__title h1">Concept</h3>
+                        <div class="ptf-approach-box__content">
+                          <p>
+                            Donec venenatis consequat libero, quis auctor nunc
+                            volutpat quis. Proin at ipsum id magna dapibus
+                            dictum eget lobortis magna. Fusce et ligula non
+                            tellus vulputate condimentum.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="200"
+                    >
+                      <div
+                        class="ptf-approach-box"
+                        style="--ptf-title-color: var(--ptf-color-white)"
+                      >
+                        <div class="ptf-approach-box__subtitle">Three</div>
+                        <h3 class="ptf-approach-box__title h1">Development</h3>
+                        <div class="ptf-approach-box__content">
+                          <p>
+                            Vivamus vel sollicitudin sem, id sagittis justo. Nam
+                            non magna eleifend, tempus nisl quis, commod diam.
+                            Morbi gravida ut nulla non porttitor. Suspendis eget
+                            arcu eu ex dignissim faucibus. Nullam et luctus
+                            tortor. Quisque eu risus vel turpis tempuss.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <div
+                        class="ptf-approach-box"
+                        style="--ptf-title-color: var(--ptf-color-white)"
+                      >
+                        <div class="ptf-approach-box__subtitle">Four</div>
+                        <h3 class="ptf-approach-box__title h1">Test</h3>
+                        <div class="ptf-approach-box__content">
+                          <p>
+                            Suspendisse vel magna vitae nunc consequat eleifend.
+                            Aenean iaculis est eget turpis lacinia egest dictum
+                            ipsum sollicitudin.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6">
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="100"
+                    >
+                      <div
+                        class="ptf-approach-box"
+                        style="--ptf-title-color: var(--ptf-color-white)"
+                      >
+                        <div class="ptf-approach-box__subtitle">Five</div>
+                        <h3 class="ptf-approach-box__title h1">Hand Over</h3>
+                        <div class="ptf-approach-box__content">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit cras tempus. Libero ligula, vitae accumsan
+                            tortor varius nec. Ut luctus maximus dolor. Nunc sed
+                            diam sit amet urna fermentum accumsan vitae vitae
+                            diam.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+              ></div>
+            </section>
+
+            <section>
+              <!--Spacer-->
+              <div
+                class="ptf-spacer"
+                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+              ></div>
+              <div class="container-xxl">
+                <div class="row">
+                  <div class="col-12">
+                    <!--Animated Block-->
+                    <div
+                      class="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 class="h1 large-heading">
+                        Clients we’ve interacted with:
+                      </h2>
+                    </div>
+                    <!--Spacer-->
+                    <div
+                      class="ptf-spacer"
+                      style="--ptf-xxl: 7.5rem; --ptf-md: 3.75rem"
+                    ></div>
+                  </div>
+                </div>
+                <div class="slider-container">
+                  <button class="nav-btn prev" id="prev">&#10094;</button>
+                  <button class="nav-btn next" id="next">&#10095;</button>
+
+                  <div class="row" id="slider-track">
+                    <!-- Sample product cards, keep your markup here -->
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="0"
+                      >
+                        <a
+                          href="https://www.instagram.com/079stories/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #fcf8f4;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/079 stories.png"
+                                alt="079 Stories"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">079 Stories</h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/bodhibeverlyhills/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/Bodhi.png"
+                                alt="Bodhi"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">Bodhi</h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Repeat as many cards as you want -->
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/drinktalesindia/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/drinktales.png"
+                                alt="drinktales"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">Drink Tales</h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/meloncbd/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/melon.png"
+                                alt="Melon"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">Melon</h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/houseoftatva/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/House Of tatva.png"
+                                alt="House Of Tatva"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">
+                              House Of TatvĀ
+                            </h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/frylofood/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/frylo.png"
+                                alt="frylo"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">Frylo</h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 col-lg-2 product-card">
+                      <div
+                        class="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="100"
+                      >
+                        <a
+                          href="https://www.instagram.com/sharmahyundai/"
+                          target="_blank"
+                        >
+                          <div
+                            class="ptf-partner-box"
+                            style="
+                              --ptf-hover-background: #f3f7fc;
+                              --ptf-image-height: 100px;
+                            "
+                          >
+                            <div class="ptf-partner-box__image">
+                              <img
+                                src="assets/img/partner/sharma.png"
+                                alt="Sharma"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h6 class="ptf-partner-box__title">
+                              Sharma Hyundai
+                            </h6>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Spacer-->
+                <div
+                  class="ptf-spacer"
+                  style="--ptf-xxl: 7.5rem; --ptf-md: 3.75rem"
+                ></div>
+                <!---paste this-->
+              </div>
+            </section>
+          </article>
+        </main>
+<!-      </div>
+      <!--Footer-->
+      <footer class="ptf-footer ptf-footer--style-1">
+        <div class="container-xxl">
+          <div class="ptf-footer__top">
+            <div class="row">
+              <div class="col-12 col-xl-6">
+                <!--Animated Block-->
+                <div
+                  class="ptf-animated-block"
+                  data-aos="fade"
+                  data-aos-delay="0"
+                >
+                  <div
+                    class="ptf-footer-heading has-black-color"
+                    style="max-width: 37.5rem"
+                  >
+                    Join us on a journey of crafting engaging, lasting
+                    content—together.
+                  </div>
+                  <!-- <div class="ptf-footer-heading has-black-color">
+                    Start by
+                    <a
+                      class="has-accent-1 text-decoration-underline"
+                      href="contact.html"
+                      >Saying Hi!</a
+                    >
+                  </div> -->
+                </div>
+              </div>
+              <!-- <div class="col-12 col-md-6 col-xl-3">
+                
+                <div
+                  class="ptf-animated-block"
+                  data-aos="fade"
+                  data-aos-delay="100"
+                >
+                  <div class="ptf-widget ptf-widget-links has-black-color">
+                    <h4 class="ptf-widget-title">Links</h4>
+                    <ul>
+                      <li><a href="faq.html">Faqs</a></li>
+                      <li><a href="#">Term & Conditions</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Help</a></li>
+                      <li><a href="#">Affiliate</a></li>
+                      <li><a href="services.html">Services</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
+              <div class="col-12 col-md-6 col-xl-3">
+                <!--Animated Block-->
+                <div
+                  class="ptf-animated-block"
+                  data-aos="fade"
+                  data-aos-delay="200"
+                >
+                  <div class="ptf-widget ptf-widget-text">
+                    <h4 class="ptf-widget-title">Contact</h4>
+                    <p class="fz-23">
+                      Orange Tag Media Pvt. Ltd.
+                      <br />
+                      1304-09, 13th floor, D block, Sun Central Place, Nr. Bopal
+                      Crossroad, SP Ring Road, Ambli, Ahmedabad 380058
+
+                      <a
+                        class="fz-40 has-black-color"
+                        href="mailto:mail@orangetag.net"
+                        >mail@orangetag.net</a
+                      >
+                    </p>
+                    <div class="ptf-footer-socials has-black-color">
+                      <a
+                        class="ptf-social-icon ptf-social-icon--style-1 whatsapp"
+                        href="https://wa.me/919725425258"
+                        target="_blank"
+                        ><i
+                          class="socicon-whatsapp"
+                          href="https://wa.me/919725425258"
+                        >
+                        </i
+                      ></a>
+                      <a
+                        class="ptf-social-icon ptf-social-icon--style-1 whatsapp"
+                        href="https://wa.me/919725425258"
+                        target="_blank"
+                        ><i> +91 97254 25258</i></a
+                      >
+                    </div>
+                  </div>
+                  <div class="ptf-widget ptf-widget-links has-black-color">
+                    <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about-us.html">About us</a></li>
+                      <li><a href="https://drive.google.com/file/d/1hTgZ_TA__5TaoWZq0baJspv7VLNr3pbu/view?usp=sharing">Portfilio</a></li>
+                      <li><a href="why.html">Why Orange Tag Media?</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ptf-footer__bottom">
+            <div class="row align-items-center">
+              <div class="col-12 col-md text-center text-md-center">
+                <a href="index.html"
+                  ><img
+                    class="black"
+                    src="assets/img/logo/1.png"
+                    alt=""
+                    loading="lazy"
+                    width="200"
+                    height="50"
+                    style="padding-top: 18px; padding-left: 20px"
+                  />
+                </a>
+              </div>
+              <div class="col-12 col-md text-center text-md-center">
+                <p class="ptf-footer-copyright has-black-color">
+                  © 2025 <span>OrangeTag</span>. All Rights Reserved.
+                </p>
+              </div>
+              <div class="col-12 col-md d-none d-xl-block"></div>
+              <div class="col-12 col-lg text-center text-md-center">
+                <div class="ptf-footer-socials has-black-color">
+                  <!--Social Icon--><a
+                    class="ptf-social-icon ptf-social-icon--style-1 linkedin"
+                    href="https://www.linkedin.com/company/orange-tag-media-pvt-ltd/"
+                    target="_blank"
+                    ><i
+                      class="socicon-linkedin"
+                      href="https://www.linkedin.com/company/orange-tag-media-pvt-ltd/"
+                    ></i
+                  ></a>
+                  <!--Social Icon--><a
+                    class="ptf-social-icon ptf-social-icon--style-1 facebook"
+                    href="https://www.facebook.com/orangetag.media"
+                    target="_blank"
+                    ><i class="socicon-facebook"></i
+                  ></a>
+                  <!--Social Icon--><a
+                    class="ptf-social-icon ptf-social-icon--style-1 instagram"
+                    href="https://www.instagram.com/orangetag.agency/"
+                    target="_blank"
+                    ><i class="socicon-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--Libs-->
+    <script src="assets/scripts/ptf-plugins.min.js"></script>
+    <script src="assets/scripts/ptf-helpers.js"></script>
+    <script src="assets/scripts/ptf-controllers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const menuToggle = document.querySelectorAll(".js-offcanvas-menu-toggle");
+      const offcanvasMenu = document.querySelector(".ptf-offcanvas-menu");
+      const siteOverlay = document.querySelector(".ptf-site-overlay");
+
+      menuToggle.forEach((toggle) => {
+        toggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          offcanvasMenu.classList.toggle("active");
+          siteOverlay.classList.toggle("active");
+        });
+      });
+
+      // Optional: click overlay to close
+      siteOverlay.addEventListener("click", () => {
+        offcanvasMenu.classList.remove("active");
+        siteOverlay.classList.remove("active");
+      });
+
+      const sliderTrack = document.getElementById("slider-track");
+      const cards = document.querySelectorAll(".product-card");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+
+      let currentIndex = 0;
+
+      function cardsPerView() {
+        const w = window.innerWidth;
+        if (w < 576) return 2;
+        if (w < 768) return 3;
+        if (w < 992) return 4;
+        return 6;
+      }
+
+      function maxIndex() {
+        return cards.length - cardsPerView();
+      }
+
+      function updateSlider() {
+        const cardWidth = cards[0].offsetWidth + 20; // padding approx
+        let moveX = cardWidth * currentIndex;
+
+        // Clamp moveX just for smoothness (optional)
+        if (moveX < 0) moveX = 0;
+        if (moveX > cardWidth * maxIndex()) moveX = cardWidth * maxIndex();
+
+        sliderTrack.style.transform = `translateX(-${moveX}px)`;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = maxIndex(); // loop to last
+        }
+        updateSlider();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex > maxIndex()) {
+          currentIndex = 0; // loop to first
+        }
+        updateSlider();
+      });
+
+      window.addEventListener("resize", () => {
+        if (currentIndex > maxIndex()) currentIndex = maxIndex();
+        updateSlider();
+      });
+
+      updateSlider();
+    </script>
+  </body>
+</html>
