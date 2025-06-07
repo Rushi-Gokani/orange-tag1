@@ -240,12 +240,10 @@
 				if (footerHeight <= PTFJS.window.height()) {
 					var leftValue = PTFJS.body.css('padding-left');
 					footer.css({
-						'position': 'fixed',
 						'left': leftValue,
 						'right': '0',
 						'bottom': '0'
 					});
-					PTFJS.body.css('padding-bottom', footerHeight);
 				} else {
 					PTFJS.body.css('padding-bottom', 0);
 					footer.removeAttr('style');
