@@ -3785,7 +3785,6 @@ p.form-submit {
 }
 .ptf-post__media {
   position: relative;
-
   overflow: hidden;
 }
 .ptf-post__media img {

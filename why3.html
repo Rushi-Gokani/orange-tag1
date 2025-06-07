@@ -144,6 +144,43 @@
           color: #f57528;
         }
       }
+
+
+      /* ----------- Post ------------ */
+ .ptf-post__body {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 23px;
+    line-height: 1.6;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .ptf-post__body.open {
+    opacity: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .ptf-post__header {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive adjustment for mobile */
+  @media (max-width: 767px) {
+    .ptf-post__content,
+    .ptf-post {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+
+
     </style>
   </head>
 
@@ -153,7 +190,7 @@
       <!--Site Wrapper Inner-->
       <div class="ptf-site-wrapper__inner">
         <!--Header-->
-        <header class="ptf-header ptf-header--style-3">
+        <header class="ptf-header ptf-header--style-3" style="padding: 0;">
           <div
             class="ptf-navbar ptf-navbar--main ptf-navbar--sticky"
             style="background-color: #000000"
@@ -233,7 +270,8 @@
                     </li>
                     <li class="menu-item">
                       <a href="about-us.html"
-                        ><span class="customize_nav active">About us</span></a
+                      target="_blank"
+                        ><span class="customize_nav">About us</span></a
                       >
                       <!-- <ul class="sub-menu">
                         <li>
@@ -271,7 +309,7 @@
                     <li class="menu-item-has-children">
                       <a
                         href="https://drive.google.com/file/d/1hTgZ_TA__5TaoWZq0baJspv7VLNr3pbu/view?usp=sharing"
-                        target="_blank"><span class="customize_nav">Portfolio</span></a
+                        ><span class="customize_nav">Portfolio</span></a
                       >
                       <!-- <ul class="sub-menu">
                         <li>
@@ -288,7 +326,7 @@
                           >
                         </li>
                         <li>
-                          <a href="single-post.html"
+                          <a href="#"
                             ><span>Single Post</span></a
                           >
                         </li>
@@ -301,18 +339,18 @@
                     </li>
                     <li class="menu-item-has-children two-columns">
                       <a href="why.html"
-                        ><span class="customize_nav">
+                        ><span class="customize_nav active">
                           Why Orange Tag Media?
                         </span>
                       </a>
-                      <!-- <ul class="sub-menu">
+                       <ul class="sub-menu">
                         <li>
-                          <a href="about-us.html"><span>About Us</span></a>
+                          <a href="why1.html"><span>Why Orange Tag Media? 2</span></a>
                         </li>
                         <li>
-                          <a href="about-me.html"><span>About Me</span></a>
+                          <a href="why3.html"><span>Why Orange Tag Media? 3</span></a>
                         </li>
-                        <li>
+                      <!--  <li>
                           <a href="services.html"><span>Services</span></a>
                         </li>
                         <li>
@@ -480,7 +518,7 @@
                       <a href="blog-sidebar.html"><span>Blog Sidebar</span></a>
                     </li>
                     <li>
-                      <a href="single-post.html"><span>Single Post</span></a>
+                      <a href="#"><span>Single Post</span></a>
                     </li>
                     <li>
                       <a href="single-post-sidebar.html"
@@ -567,122 +605,170 @@
               <!--Spacer-->
               <div
                 class="ptf-spacer"
-                style="--ptf-xxl: 12rem; --ptf-md: 12rem"
+                style="--ptf-xxl: 10rem; --ptf-md: 10rem"
               ></div>
               <div class="container-xxl">
-                <div class="row align-items-center">
-                  <div class="col-xl-6">
+                <div class="row">
+                  <div class="col-xl-12" style="text-align: center;">
                     <!--Animated Block-->
                     <div
                       class="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 class="h2">Orange Tag</h1>
-                    </div>
-                    <!--Spacer-->
-                    <div class="ptf-spacer" style="--ptf-xxl: 2.8125rem"></div>
-                    <!--Animated Block-->
-                    <div
-                      class="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="100"
-                    ></div>
-                    <!--Spacer-->
-
-                    <div class="row">
-                      <div class="col-xl-8">
-                        <div style="max-width: 29.6875rem">
-                          <!--Animated Block-->
-                          <div
-                            class="ptf-animated-block"
-                            data-aos="fade"
-                            data-aos-delay="200"
-                          >
-                            <!--Divider-->
-                            <div class="ptf-divider"></div>
-                            <!--Spacer-->
-                            <div
-                              class="ptf-spacer"
-                              style="--ptf-xxl: 4.375rem; --ptf-md: 2.1875rem"
-                            ></div>
-                            <p class="fz-24 text-justify">
-                              OrangeTag Media is a full-stack social media
-                              agency dedicated to elevating your brand's online
-                              presence. We understand that in the fast-paced
-                              world of social media, capturing your audience's
-                              attention is an art. With a team of creative
-                              minds, tech enthusiasts, and digital strategists,
-                              we've mastered the art of creating content that
-                              not only stops the scroll but sparks
-                              conversations, builds communities, and drives
-                              results.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-6">
-                    <!--Spacer-->
-                    <div class="ptf-spacer" style="--ptf-xl: 5.625rem"></div>
-                    <!--Animated Block-->
-                    <div
-                      class="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="300"
-                    >
-                      <div class="text-center">
-                        <div
-                          class="ptf-mask-image book-view"
-                          style="--ptf-mask-image: none"
-                        >
-                          <!-- First image (mask) as background -->
-                          <img
-                            src="assets/img/root/about-us/about-us-main-image-layer-1.png "
-                            alt="Mask"
-                            loading="lazy"
-                            style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              z-index: 1;
-                              width: 800px;
-                              height: auto;
-                            "
-                          />
-
-                          <!-- Second image (main layer) -->
-                          <img
-                            src="assets/img/mask/mask.jpg"
-                            alt="Main Layer"
-                            loading="lazy"
-                            style="
-                              position: relative;
-                              z-index: 2;
-                              width: 500px;
-                              height: auto;
-                            "
-                          />
-                        </div>
-                      </div>
+                      <h1 class="h2">Why OrangeTag Media?</h1>
                     </div>
                   </div>
                 </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style="--ptf-xxl: 6.875rem"></div>
               </div>
+
               <!--Spacer-->
               <div
                 class="ptf-spacer"
-                style="--ptf-xxl: 10rem; --ptf-md: 5rem"
+                style="--ptf-xxl: 0rem; --ptf-md: 3.75rem"
               ></div>
             </section>
             <section>
               <div class="container-xxl">
-                <!--Divider-->
-                <div class="ptf-divider"></div>
+  <div class="row">
+    <div class="col-xl-12">
+      <!--Animated Block-->
+      <div
+        class="ptf-animated-block"
+        data-aos="fade"
+        data-aos-delay="0"
+      >
+        <div
+          class="ptf-isotope-grid"
+          data-columns="1"
+          data-layout="masonry"
+          data-x-gap="15"
+          data-y-gap="15"
+        >
+          <div class="grid-sizer"></div>
+
+          <!-- First grid item with toggle -->
+          <div class="grid-item filter-1 filter-4">
+            <article class="ptf-post ptf-post--style-3">
+              <div class="ptf-post__media">
+                <a class="ptf-work__link" href="#"></a>
+                <img
+                  src="assets/img/why/1.jpg"
+                  alt=""
+                  loading="lazy"
+                  style="width: 400px; height: 300px;"
+                />
               </div>
-            </section>
-                <!--Footer-->
+              <div class="ptf-post__content">
+                <header class="ptf-post__header" onclick="toggleContent(this)">
+                  <h3 class="ptf-post__title">Tailored Content:</h3>
+                </header>
+                <div class="ptf-post__body">
+                  We understand that one size does not fit all. Our team customizes content
+                  to align with your brand's unique identity, ensuring authenticity and
+                  resonance with your audience.
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="grid-item filter-1 filter-4">
+                          <!--Blog Post-->
+                          <article class="ptf-post ptf-post--style-3">
+                            <div class="ptf-post__media">
+                              <a
+                                class="ptf-work__link"
+                                href="#"
+                              ></a
+                              ><img
+                                src="assets/img/why/3.jpg"
+                                alt=""
+                                loading="lazy"
+                                style="width: 400px; height: 300px;"
+                              />
+                            </div>
+              <div class="ptf-post__content">
+                <header class="ptf-post__header" onclick="toggleContent(this)">
+                  <h3 class="ptf-post__title">
+                                  Constant Innovation:
+                                </h3>
+                              </header>
+                              <div class="ptf-post__body">
+                                In the ever-evolving landscape of social media,
+                                we stay ahead of trends and technology. Our team
+                                embraces innovation to keep your brand at the
+                                forefront of digital marketing.
+                              </p>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="grid-item filter-1 filter-4">
+                          <!--Blog Post-->
+                          <article class="ptf-post ptf-post--style-3">
+                            <div class="ptf-post__media">
+                              <a
+                                class="ptf-work__link"
+                                href="#"
+                              ></a
+                              ><img
+                                src="assets/img/why/4.jpg"
+                                alt=""
+                                loading="lazy"
+                                style="width: 400px; height: 300px;"
+                              />
+                            </div>
+              <div class="ptf-post__content">
+                <header class="ptf-post__header" onclick="toggleContent(this)">
+                  <h3 class="ptf-post__title">
+                                  Collaborative Partnership:
+                                </h3>
+                              </header>
+                              <div class="ptf-post__body">
+                                At OrangeTag Media, we view our clients as
+                                partners. We work closely with you to understand
+                                your objectives, values, and vision, fostering a
+                                collaborative relationship that drives success.
+                              </p>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="grid-item filter-1 filter-4">
+                          <!--Blog Post-->
+                          <article class="ptf-post ptf-post--style-3">
+                            <div class="ptf-post__media">
+                              <a
+                                class="ptf-work__link"
+                                href="#"
+                              ></a
+                              ><img
+                                src="assets/img/why/5.jpg"
+                                alt=""
+                                loading="lazy"
+                                style="width: 400px; height: 300px;"
+                              />
+                            </div>
+              <div class="ptf-post__content">
+                <header class="ptf-post__header" onclick="toggleContent(this)">
+                  <h3 class="ptf-post__title">
+                                  Tailored for Your Audience:
+                                </h3>
+                              </header>
+                              <div class="ptf-post__body">
+                                We believe in the power of personalization.
+                                Every brand is unique, and so is its audience.
+                                Our content is meticulously tailored to resonate
+                                with your specific audience, creating a
+                                connection that goes beyond the screen.
+                              </p>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Spacer-->
+
+</section>      <!--Footer-->
       <footer class="ptf-footer ptf-footer--style-1">
         <div class="container-xxl">
           <div class="ptf-footer__top" style="padding-bottom: 0px; padding-top: 35px; margin-top: 20px;">
@@ -801,31 +887,67 @@
         </main>     
       </div>
     </div>
-          <!--Libs-->
-      <script src="assets/scripts/ptf-plugins.min.js"></script>
-      <script src="assets/scripts/ptf-helpers.js"></script>
-      <script src="assets/scripts/ptf-controllers.min.js"></script>
-      <script>
-        const menuToggle = document.querySelectorAll(
-          ".js-offcanvas-menu-toggle"
-        );
-        const offcanvasMenu = document.querySelector(".ptf-offcanvas-menu");
-        const siteOverlay = document.querySelector(".ptf-site-overlay");
+                  <!--Libs-->
+                  <script src="assets/scripts/ptf-plugins.min.js"></script>
+                  <script src="assets/scripts/ptf-helpers.js"></script>
+                  <script src="assets/scripts/ptf-controllers.min.js"></script>
+                  <script>
+                    const menuToggle = document.querySelectorAll(
+                      ".js-offcanvas-menu-toggle"
+                    );
+                    const offcanvasMenu = document.querySelector(
+                      ".ptf-offcanvas-menu"
+                    );
+                    const siteOverlay =
+                      document.querySelector(".ptf-site-overlay");
 
-        menuToggle.forEach((toggle) => {
-          toggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            offcanvasMenu.classList.toggle("active");
-            siteOverlay.classList.toggle("active");
-          });
-        });
+                    menuToggle.forEach((toggle) => {
+                      toggle.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        offcanvasMenu.classList.toggle("active");
+                        siteOverlay.classList.toggle("active");
+                      });
+                    });
 
-        // Optional: click overlay to close
-        siteOverlay.addEventListener("click", () => {
-          offcanvasMenu.classList.remove("active");
-          siteOverlay.classList.remove("active");
-        });
-      </script>
-    
+                    // Optional: click overlay to close
+                    siteOverlay.addEventListener("click", () => {
+                      offcanvasMenu.classList.remove("active");
+                      siteOverlay.classList.remove("active");
+                    });
+   $(document).ready(function () {
+    $(".ptf-isotope-grid").isotope({
+      itemSelector: ".grid-item",
+      layoutMode: "masonry",
+      masonry: {
+        gutter: 15,
+      },
+    });
+  });
+
+  function toggleContent(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains("open");
+
+    if (isOpen) {
+      body.style.maxHeight = body.scrollHeight + "px"; // for transition
+      requestAnimationFrame(() => {
+        body.style.maxHeight = "0px";
+      });
+      body.classList.remove("open");
+    } else {
+      body.classList.add("open");
+      body.style.maxHeight = body.scrollHeight + "px";
+      setTimeout(() => {
+        body.style.maxHeight = "none";
+      }, 400);
+    }
+
+    // Trigger isotope layout update after animation completes
+    setTimeout(() => {
+      $(".ptf-isotope-grid").isotope("layout");
+    }, 450);
+  }
+                  </script>
+                
   </body>
 </html>
