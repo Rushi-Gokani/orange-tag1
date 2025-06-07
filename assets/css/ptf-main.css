@@ -1957,7 +1957,7 @@ p.form-submit {
 /* LAYOUT: FOOTER
 -------------------------------------------- */
 .ptf-footer {
-  position: relative;
+  position: absolute;
 }
 
 /* SECTION: FOOTER STYLE 1

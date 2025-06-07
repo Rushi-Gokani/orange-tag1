@@ -1568,9 +1568,9 @@ p.form-submit {
   -webkit-box-shadow: inset 0 0 0 1px var(--ptf-accent-1);
   box-shadow: inset 0 0 0 1px var(--ptf-accent-1);
 }
-.ptf-footer {
-  position: relative;
-}
+/* .ptf-footer {
+  position: absolute;
+} */
 .ptf-footer--style-1 {
   background-color: var(--ptf-color-9);
   background-image: url(../img/root/footer-bubble.png);
@@ -1623,6 +1623,7 @@ p.form-submit {
     .ptf-footer__top
     .ptf-footer-heading
     + .ptf-footer-heading {
+      position: absolute;
     margin-top: 2.5rem;
   }
 }
