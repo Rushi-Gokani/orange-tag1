@@ -144,9 +144,9 @@
           color: #f57528;
         }
       }
-      .mask-image {
+      .mask{
   position: absolute;
-  top: 0;
+  top: 500;
   left: 0;
   z-index: 1;
   width: 600px;
@@ -155,9 +155,9 @@
 
 /* For mobile devices (example max-width 767px) */
 @media (max-width: 767px) {
-  .mask-image {
-    width: 300px;  /* optional: adjust width too if needed */
-    height: 350px; /* your mobile height */
+  .mask {
+    width: 400px;  /* optional: adjust width too if needed */
+    height: 550px; /* your mobile height */
   }
 }
 
@@ -650,23 +650,13 @@
                       data-aos-delay="300"
                     >
                       <div class="text-center">
-                        <div
-                          class="ptf-mask-image book-view"
-                          style="--ptf-mask-image: none"
-                        >
+                        <div>
                           <!-- First image (mask) as background -->
                           <img
                             src="assets/img/root/about-us/mask-Photoroom.png "
                             alt="Mask"
                             loading="lazy"
-                            style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              z-index: 1;
-                              width: 600px;
-                              height: 700px;
-                            "
+                            class="mask"
                           />
 
                           <!-- Second image (main layer) -->
