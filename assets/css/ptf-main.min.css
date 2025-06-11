@@ -31,7 +31,7 @@
   --ptf-linear-icons-regular: LineIconsPro Regular;
   --ptf-transition-duration: 300ms;
   --ptf-transition-easing: ease-in-out;
-  --ptf-navbar-height: 132px;
+  --ptf-navbar-height: 100px;
 }
 @-webkit-keyframes ptf_animate_icon_right {
   49% {
