@@ -155,6 +155,22 @@
         display: block;
       }
     }
+    /* Hide mobile image by default */
+.mobile-banner {
+  display: none;
+}
+
+/* Hide desktop image on small screens */
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none;
+  }
+
+  .mobile-banner {
+    display: block;
+  }
+}
+
     /* Hide the <br> inside .br-mobile-hide on small/mobile screens */
     @media (max-width: 767.98px) {
       .br-mobile-hide {
@@ -409,24 +425,34 @@
         <!--Main-->
         <main class="ptf-main">
           <article class="ptf-page ptf-page--home-default">
-            <section style="background-color: #ffffff !important; " >
-              <div class="ptf-spacer" style="--ptf-xxl: 6rem"></div>
-              <!-- Optional spacer if you want top space -->
-              <div class="container-xxl p-0" style="max-width: 100%">
-                <div class="row g-0">
-                  <!-- g-0 removes gutter between columns -->
-                  <div class="col-12">
-                    <img
-                      src="assets/img/banner/banner.jpeg"
-                      alt="Banner"
-                      loading="lazy"
-                      style="width: 100%; height: 500px; object-fit: cover"
-                      class="custom-banner"
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
+            <section style="background-color: #ffffff !important;">
+  <div class="ptf-spacer" style="--ptf-xxl: 6rem"></div>
+
+  <div class="container-xxl p-0" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-12">
+        <!-- Desktop Banner -->
+        <img
+          src="assets/img/banner/banner.jpeg"
+          alt="Banner"
+          loading="lazy"
+          class="custom-banner desktop-banner"
+          style="width: 100%; height: 500px; object-fit: cover;"
+        />
+
+        <!-- Mobile Banner -->
+        <img
+          src="assets/img/banner/banner-mobile.png"
+          alt="Mobile Banner"
+          loading="lazy"
+          class="custom-banner mobile-banner"
+          style="width: 100%; height: 630px; ;"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
             <section>
               <div
                 class="ptf-spacer"
